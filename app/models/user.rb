@@ -7,4 +7,8 @@ class User < ApplicationRecord
   def set_encrypt_password
     self.password = BCrypt::Password.create self.password
   end
+
+  def is_valid_password?(password)
+    self.password == BCrypt::Engine.has_secret(password, self.password)
+  end
 end
