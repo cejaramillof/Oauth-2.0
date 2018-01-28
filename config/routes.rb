@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'users#new' #login
   use_doorkeeper
   resources :courses
   resources :users
