@@ -3,3 +3,4 @@ json.courses @courses do |course|
   json.name course.name
   json.description course.description
 end
+json.username @user.username
