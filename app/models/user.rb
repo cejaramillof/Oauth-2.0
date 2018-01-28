@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   require "bcrypt"
+  has_many :courses
+
   before_create :set_encrypt_password
 
   validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20 }

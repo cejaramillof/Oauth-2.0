@@ -2,7 +2,7 @@ class Api::CoursesController < ApplicationController
   before_action  :doorkeeper_authorize!
   before_action :set_user
   def index
-    @courses = Course.all
+    @courses = @user.courses
   end
   private
     def set_user
